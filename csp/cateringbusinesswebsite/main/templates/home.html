@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Catering - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #banner {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+            text-align: center;
+        }
+        #about,
+        #services,
+        #contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hello Catering</h1>
+            <nav>
+                <ul>
+                    {%if user.is_authenticated%}
+                        <li><a href="{%url 'logout'%}">Logout</a></li>
+                    {%else%}
+                        <li><a href="{% url 'signup' %}">Sign up</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    {%endif%}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="banner">
+        <div class="container">
+            <h2>Welcome to Hello Catering</h2>
+            <p>This is for my computer science project</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>This project is helping me understand Django and how to code using django. </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Djando coding1</li>
+                <li>Django coding2</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For inquiries and bookings, please contact us:</p>
+            <p>Email: hello@cateringbusiness.com</p>
+            <p>Phone: 07111111111</p>
+            <p>Address: 0 School Street, London, WA55 ABC</p>
+        </div>
+    </section>
+</body>
+</html>

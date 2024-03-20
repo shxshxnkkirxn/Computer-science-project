@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>{% block title %}Users{% endblock %}</title>
+</head>
+
+<body>
+    <h1>User's list: </h1>
+    <ul>
+        {%for profile in profiles%}
+            <li>{{profile.user.username}}</li>
+        {%endfor%}
+    </ul>
+
+</body>
+</html>
+
+<!--https://stackoverflow.com/questions/4161332/how-can-i-include-python-script-in-a-html-file-->
